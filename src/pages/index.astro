@@ -4,8 +4,9 @@ import Home from "../components/Home.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Birefcase from "../components/icons/Birefcase.astro";
-import CodeIcon from '../components/icons/Code.astro'
-import Projects from '../components/Projects.astro'
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
+import SubTitle from "../components/SubTitle.astro";
 ---
 
 <Layout
@@ -13,28 +14,24 @@ import Projects from '../components/Projects.astro'
 	description="Contrata a mikell para crear tu aplicación web. Desarrollador Web. Desarrollador Backend. Programador freelance."
 >
 	<main class="px-4">
-		<SectionContainer class="py-44 pb-32">
+		<SectionContainer class="pt-14 sm:py-28 sm:pb-32 pb-16">
 			<Home />
 		</SectionContainer>
 
-		<SectionContainer id="experiencia">
-			<h2
-				class="text-3xl font-semibold mb-6 flex justify-start items-center gap-x-3"
-			>
-				<Birefcase class="size-8" />
-				Experiencia Laboral
-			</h2>
-			<Experience />
-		</SectionContainer>
-
 		<SectionContainer id="proyectos">
-			<h2
-				class="text-3xl font-semibold mb-6 flex justify-start items-center gap-x-3"
-			>
+			<SubTitle>
 				<CodeIcon class="size-8" />
 				Proyectos
-			</h2>
+			</SubTitle>
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<SubTitle>
+				<Birefcase class="size-8" />
+				Experiencia Laboral
+			</SubTitle>
+			<Experience />
 		</SectionContainer>
 	</main>
 </Layout>

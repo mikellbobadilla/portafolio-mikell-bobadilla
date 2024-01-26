@@ -1,3 +1,5 @@
 # Portafolio de Mikell Bobadilla
 
-![captura de pantalla del portafolio de Mikell Bobadilla](image.png)
+Página inspirada en el curso de Astro de Midu-dev
+
+![Alt text](image.png)
