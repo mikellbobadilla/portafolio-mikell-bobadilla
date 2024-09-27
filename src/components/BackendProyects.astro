@@ -1,51 +1,88 @@
 ---
-import JavaIcon from './icons/JavaIcon.astro';
-import PostgresIcon from './icons/PostgresIcon.astro';
-import SpringIcon from './icons/SpringIcon.astro';
-
+import JavaIcon from "./icons/JavaIcon.astro";
+import PostgresIcon from "./icons/PostgresIcon.astro";
+import SpringIcon from "./icons/SpringIcon.astro";
+import ReactIcon from "./icons/React.astro";
+import ReactRouterIcon from "./icons/ReactRouter.astro";
+import TypeStriptIcon from "./icons/TypeScript.astro";
+import MaterialUIIcon from "./icons/MaterialUI.astro";
+import MaterialUI from "./icons/MaterialUI.astro";
 
 const TAGS = {
     SPRING: {
         name: "Spring boot",
         class: "bg-gray-500/20 text-white",
-        icon: SpringIcon
+        icon: SpringIcon,
     },
     POSTGRES: {
         name: "Postgres SQL",
         class: "bg-gray-500/20 text-white",
-        icon: PostgresIcon
+        icon: PostgresIcon,
     },
     JAVA: {
         name: "Java",
         class: "bg-gray-500/20 text-white",
-        icon: JavaIcon
-    }
-}
+        icon: JavaIcon,
+    },
+    REACT: {
+        name: "React",
+        class: "bg-gray-500/20 text-white",
+        icon: ReactIcon,
+    },
+    TYPESCRIPT: {
+        name: "TypeScript",
+        class: "bg-gray-500/20 text-white",
+        icon: TypeStriptIcon,
+    },
+    REACTROUTER: {
+        name: "React Router",
+        class: "bg-gray-500/20 text-white",
+        icon: ReactRouterIcon,
+    },
+    MATERIALUI: {
+        name: "Material UI",
+        class: "bg-gray-500/20 text-white",
+        icon: MaterialUI,
+    },
+};
 
 const PROJECTS = [
     {
+        title: "React Movie",
+        description:
+            "Esta aplicación permite a los usuarios buscar películas ingresando el nombre en una barra de búsqueda. Al escribir y enviar el nombre de la película, la app se conecta a la API de OMDb y muestra resultados con el título, el año de lanzamiento y el póster de la película. La interfaz es sencilla y enfocada únicamente en buscar películas por su nombre, sin opciones adicionales de filtrado o funciones avanzadas.",
+        github: "https://23e7ea9a.reactmovie-2gm.pages.dev/?s=Avengers",
+        tags: [TAGS.TYPESCRIPT, TAGS.REACT, TAGS.REACTROUTER, TAGS.MATERIALUI],
+        image: "/projects/reactMovie.png",
+        link: "",
+    },
+    {
         title: "Blogging Platform",
-        description: "Desarrollo de una API RESTful para la gestión de blogs, implementada con las mejores prácticas actuales y estándares de la industria. La API permite crear, leer, actualizar y eliminar publicaciones, gestionando usuarios, comentarios y categorías, asegurando seguridad, escalabilidad y fácil mantenimiento.",
+        description:
+            "Desarrollo de una API RESTful para la gestión de blogs, implementada con las mejores prácticas actuales y estándares de la industria. La API permite crear, leer, actualizar y eliminar publicaciones, gestionando usuarios, comentarios y categorías, asegurando seguridad, escalabilidad y fácil mantenimiento.",
         github: "https://github.com/mikellbobadilla/Bloggin-Platform",
         tags: [TAGS.JAVA, TAGS.SPRING, TAGS.POSTGRES],
         image: "/projects/blogging.png",
-        link: ""
+        link: "",
     },
     {
         title: "Movie Stream",
-        description: "Desarrollo de una API RESTful para el streaming y administración de recursos multimedia, incluyendo carga, descarga, reproducción en tiempo real, y manejo de múltiples pistas de audio y subtítulos. Optimizada para una gestión eficiente y segura de archivos multimedia.",
+        description:
+            "Desarrollo de una API RESTful para el streaming y administración de recursos multimedia, incluyendo carga, descarga, reproducción en tiempo real, y manejo de múltiples pistas de audio y subtítulos. Optimizada para una gestión eficiente y segura de archivos multimedia.",
         github: "https://github.com/mikellbobadilla/movie-stream-backend",
         tags: [TAGS.JAVA, TAGS.SPRING, TAGS.POSTGRES],
         image: "/projects/stream.png",
-        link: ""
-    }
-]
+        link: "",
+    },
+];
 ---
 
 {
     PROJECTS.map(({ title, description, tags, image, github }) => (
         <article class="mb-10">
-            <h3 class="text-2xl text-balance font-semibold text-yellow-200/80 mb-2">{title}</h3>
+            <h3 class="text-2xl text-balance font-semibold text-yellow-200/80 mb-2">
+                {title}
+            </h3>
             <p class="text-md sm:text-lg text-pretty mb-4">{description}</p>
             <ul class="flex gap-x-2 flex-row mb-4">
                 {tags.map((tag) => (
@@ -59,10 +96,10 @@ const PROJECTS = [
             </ul>
             <a href={github} target="_blank" rel="noopener noreferrer">
                 <img
-                class="rounded shadow-2xl shadow-white/5"
-                src={image}
-                alt={`Captura de pantalla del proyecto ${image}`}
-            />
+                    class="rounded shadow-2xl shadow-white/5"
+                    src={image}
+                    alt={`Captura de pantalla del proyecto ${image}`}
+                />
             </a>
         </article>
     ))
